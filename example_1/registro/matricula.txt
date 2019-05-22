@@ -1,0 +1,3 @@
+El estudiante Jhonatan con cedula: 1008 se encuentra inscrito en el curso: Node.JS 
+Duración: 70 horas. 
+Costo de matrícula: 50 dolares.

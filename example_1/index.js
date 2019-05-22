@@ -1,33 +1,31 @@
 const argv = require('./js/yargs').argv;
-const curso = require('./js/curso').curso;
-const { crearArchivo } = require('./js/crearArchivo');
+const curso = require('./js/cursos').curso;
+const { crearRegistro } = require('./js/crearRegistro');
 
 let comand = argv._[0];
 
 function mensaje(id_curso) {
     setTimeout(function() {
-        let texOut = 'El curso se llama';
+        let texOut = 'Curso: ';
         let name = curso[id_curso];
         console.log(texOut + ms(name.curso, name.horas, name.valor));
     }, id_curso * 2000 + 2000);
 }
 
 function ms(curso, horas, valor) {
-    return `${curso} tiene una duración de ${horas} horas y su valor de 
-matrícula es ${valor} pesos`;
+    return `${curso} \nDuración: ${horas} horas. \nCosto de matrícula: ${valor} dolares.\n`;
 }
 
 switch (comand) {
-    case 'inscribir':
+    case 'matricular':
         if (Number(argv.id) < curso.length + 1) {
             name = curso.find(cursoEst => cursoEst.id == argv.id)
-            crearArchivo(argv.nombre, argv.cedula, ms(name.curso, 
+            crearRegistro(argv.nombre, argv.cedula, ms(name.curso,
 name.horas, name.valor))
-                .then(e => console.log('Se ha creado el archivo'))
+                .then(e => console.log('Se realizado el registro.'))
                 .catch(e => console.log(e));
         } else {
-            console.log(`El valor introducido en "${argv.id}" no es 
-número válido`)
+            console.log(`El id del curso seleccionado no existe (id = "${argv.id}")`)
         }
         break;
 }

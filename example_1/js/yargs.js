@@ -14,7 +14,7 @@ const opciones = {
 };
 
 const argv = require('yargs')
-    .command('inscribir', opciones)
+    .command('matricular', 'Realizar matricula aspirante', opciones)
     .argv;
 
 module.exports = { argv }

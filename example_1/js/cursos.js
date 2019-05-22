@@ -16,7 +16,7 @@ let curso = [{
         horas: 60,
         valor: 40
     },
-    
+    {
         id: 4,
         curso: 'Diseño Grafico',
         horas: 30,
